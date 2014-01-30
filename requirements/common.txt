@@ -1,0 +1,5 @@
+Django==1.6.1
+django-admin-bootstrapped==1.6.4
+django-bootstrap3==2.5.5
+django-tastypie==0.11.0
+
