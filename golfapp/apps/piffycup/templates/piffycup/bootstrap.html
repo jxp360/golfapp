@@ -5,19 +5,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Piffy Golf TournamentDashboard </title>
+    <title>Piffy Golf Tournament</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">    
     
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-responsive.min.css" rel="stylesheet">
-    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/font-awesome.min.css" rel="stylesheet">        
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">        
     
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-    
+    <link href="{% static 'css/jquery-ui-1.10.0.custom.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/base-admin-3.css' %}" rel="stylesheet">
     <link href="{% static 'css/base-admin-3-responsive.css' %}" rel="stylesheet">
     
@@ -43,7 +40,7 @@
       <span class="sr-only">Toggle navigation</span>
       <i class="icon-cog"></i>
     </button>
-    <a class="navbar-brand" href="./index.html">Base Admin 3.0</a>
+    <a class="navbar-brand" href="./index.html">Piffy Cup</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,11 +81,12 @@
 		</li>
     </ul>
     
+    <!-- 
     <form class="navbar-form navbar-right" role="search">
       <div class="form-group">
         <input type="text" class="form-control input-sm search-query" placeholder="Search">
       </div>
-    </form>
+    </form> -->
   </div><!-- /.navbar-collapse -->
 </div> <!-- /.container -->
 </nav>
@@ -119,6 +117,18 @@
 						</a>	    				
 					</li>
 					
+					<li class="dropdown">					
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+				                        <i class="icon-user"></i> 
+							<span>Golfers</span>
+							<b class="caret"></b>
+						</a>	    
+					
+						<ul class="dropdown-menu">
+							<li><a href="./list.html">List Golfers</a></li>
+							<li><a href="./modify.html">Add/Modify Golfers</a></li>
+						</ul> 				
+					</li>
 					<li class="dropdown">					
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="icon-th"></i>
@@ -579,13 +589,13 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/libs/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="{% static 'js/jquery-ui-1.10.0.custom.min.js' %}"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.js"></script>
-<script src="http://cdnjs/cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.resize.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.resize.min.js"></script>
 
 <script src="{% static 'js/Application.js' %}"></script>
 

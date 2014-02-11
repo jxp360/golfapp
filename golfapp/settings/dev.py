@@ -2,7 +2,7 @@
 
 from golfapp.settings.common import *
 
-BASE_DIR = '/data/golfapp/dbs/dev'
+DB_BASE_DIR = '/data/golfapp/dbs/dev'
 
 INSTALLED_APPS = (
     'bootstrap3',
@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'golfapp.apps.golfstats',
+    'golfapp.apps.piffycup',
     'debug_toolbar',
 )
 
@@ -35,7 +36,7 @@ INTERNAL_IPS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'golfapp.db'),
+        'NAME': os.path.join(DB_BASE_DIR, 'golfapp.db'),
     }
 }
 
