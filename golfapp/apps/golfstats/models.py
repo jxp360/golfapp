@@ -2,6 +2,7 @@ from django.db import models
 
 class Golfer(models.Model):
     name = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     phone = models.CharField(max_length=14)
     def __unicode__(self):

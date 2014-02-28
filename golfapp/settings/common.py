@@ -23,6 +23,8 @@ SECRET_KEY = 'd&&p!*o(&k^u$!f#2$znv-18f*mgw1g27#+avh6+of=%0-bl6z'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = ('/data/workspace/golfapp/staticfiles',
+                )
 
 ALLOWED_HOSTS = []
 

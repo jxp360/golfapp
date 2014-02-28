@@ -2,7 +2,7 @@
 
 from golfapp.settings.common import *
 
-DB_BASE_DIR = '/data/golfapp/dbs/dev'
+DB_BASE_DIR = '/data/workspace/golfapp/dbs/dev'
 
 INSTALLED_APPS = (
     'bootstrap3',
@@ -29,14 +29,22 @@ MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
+#AUTHENTICATION_BACKENDS = (
+#    'mongoengine.django.auth.MongoEngineBackend',
+#)
+
 INTERNAL_IPS = (
     '127.0.0.1',
 )
 
 DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.dummy',
+#    }
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(DB_BASE_DIR, 'golfapp.db'),
     }
 }
 
+#connect('golfapp')
