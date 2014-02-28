@@ -1,0 +1,77 @@
+
+{% extends "templates/base.html" %}
+{% load staticfiles %}
+
+{% block mainnav %}<li class="dropdown">{% endblock %}
+{% block golfers %}<li class="active dropdown">{% endblock %}
+{% block maincode %}
+    <script type="text/javascript">
+    $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+    var $target = $( event.currentTarget );
+    $target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text( $target.text() ).end().children( '.dropdown-toggle' ).dropdown( 'toggle' );
+    var golferName = $target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text();
+    $( "#hidden-div" ).removeClass('hide');
+    return false;
+    });
+    </script>
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget stacked ">
+                    <div class="widget-header">
+                        <i class="icon-user"></i>
+                        <h3>Golfer Modification</h3>
+                    </div/>
+                    <div class="widget-content">
+                        <section id="golfer-selection">
+                            <div class="btn-group btn-input clearfix">
+                                <button type="button" class="btn btn-primary dropdown-toggle form-control" data-toggle="dropdown">
+                                   <span data-bind="label">Please Select Golfer</span><span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Add New Golfer{{ player.name }}</a></li>
+                                    {% for player in players %}
+                                        <li><a href="#">{{ player.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </section>
+                    </div/>
+                    <div id="hidden-div" class="hide">
+                    <div class="widget-header">
+                        <i class="icon-user"></i>
+                        <h3>Golfer Information</h3>
+                    </div/>
+                    <div class="widget-content">
+                        <section id="golfer-information">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="golferName">Name</label>
+                                    <input type="text" class="form-control" id="golferName" placeholder="Golfer Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="golferUsername">User Name</label>
+                                    <input type="text" class="form-control" id="golferUsername" placeholder="Golfer Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="golferEmail">Email Address</label>
+                                    <input type="email" class="form-control" id="golferEmail" placeholder="Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="golferPhone">Phone Number</label>
+                                    <input type="text" class="form-control" id="golferPhone" placeholder="Phone Number (XXX)-XXX-XXXX">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="cancel" class="btn btn-danger">Cancel</button>
+                            </form>
+                        </section>
+                    </div/>
+                    </div/>
+                </div/>
+            </div/>
+        </div/>
+    </div/>
+</div>
+{% endblock %}
+
