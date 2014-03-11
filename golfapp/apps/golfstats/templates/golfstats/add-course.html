@@ -18,11 +18,11 @@
                     {% csrf_token %}
                     {% bootstrap_form form %}
                     {% bootstrap_messages %}
-                    {% buttons submit='OK' reset='Clear Changes' %}{% endbuttons %}
+                    {% buttons submit='OK' reset='Cancel' %}{% endbuttons %}
                     </form>
                     </br>
-                    <form action={% url 'golfstats.list-golfers' %}>
-                        <button type="submit" class="btn btn-primary">Return to List</button>
+                    <form action={% url 'golfstats.list-courses' %}>
+                        <button type="submit" class="btn btn-success">Return to List</button>
                     </form>
                     </div>
                 </div/>

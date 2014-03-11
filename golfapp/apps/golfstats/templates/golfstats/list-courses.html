@@ -11,33 +11,35 @@
                 <div class="widget stacked ">
                     <div class="widget-header">
                         <i class="icon-user"></i>
-                        <h3>Golfer</h3>
+                        <h3>Golfers</h3>
                     </div/>
                     <div class="widget-content">
-                        <br />
+                        <section id="addnew">
+                            <form action={% url 'golfstats.add-golfer' %}>
+                            <button type="submit" class="btn btn-success">Add Golfer</button>
+                            </form>
+                        </section>
+                        </br> 
                         <section id="tables">
-                            <div class="page-header">
-                                <h3>TestTable</h3>
-                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
+                                            <th>Address</th>
                                             <th>Phone</th>
+                                            <th>Edit</th>
                                         </tr>
                                     </thead>
-                                    {% for player in players %}
+                                    {% for course in courses %}
                                         <tbody>
                                             <tr>
-                                                <th>{{ player.id }}</th>
-                                                <th>{{ player.name }}</th>
-                                                <th>{{ player.username }}</th>
-                                                <th>{{ player.email }}</th>
-                                                <th>{{ player.phone }}</th>
+                                                <th>{{ course.id }}</th>
+                                                <th>{{ course.golfcourse.name }}</th>
+                                                <th>{{ course.golfcourse.address }}</th>
+                                                <th>{{ course.golfcourse.phonenumber }}</th>
+                                                <th><a href={% url 'golfstats.modify-course' course_id=course.id %}>Edit Course</a>
                                             </tr>
                                         </tbody>
                                     {% endfor %}

@@ -114,15 +114,25 @@
                         </a>	    				
                     </li>
                     {% block golfers %}<li class="dropdown">{% endblock %}					
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="{url 'golfstats.list-golfers' %}" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="icon-user"></i>
                             <span>Golfers</span>
                             <b class="caret"></b>
                         </a>	    
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'golfstats-list' %}">List Golfers</a></li>
-                            <li><a href="golfstats/modify-golfer.html">Add/Modify Golfers</a></li>
-                            <li><a href="golfstats/modify-golfer-form.html">Test Add/Modify Golfers</a></li>
+                            <li><a href="{% url 'golfstats.list-golfers' %}">List Golfers</a></li>
+                            <li><a href="golfstats/modify-golfer-formset.html">Formset Add/Modify Golfers</a></li>
+                        </ul> 				
+                    </li>
+                    {% block courses %}<li class="dropdown">{% endblock %}					
+                        <a href="{url 'golfstats.list-courses' %}" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-flag"></i>
+                            <span>Courses</span>
+                            <b class="caret"></b>
+                        </a>	    
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'golfstats.list-courses' %}">List Courses</a></li>
+                            <li><a href="golfstats/modify-golfer-formset.html">Formset Add/Modify Golfers</a></li>
                         </ul> 				
                     </li>
                     <li class="dropdown">					
